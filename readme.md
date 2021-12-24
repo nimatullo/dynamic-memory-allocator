@@ -3,31 +3,9 @@
 Dynamic memory allocator using segregated lists and coalescing.
 
 **Supports**
-
-## `sf_malloc`
-
-## `sf_realloc`
-
-## `sf_free`
-
-## Format of an allocated memory block 
-    +-----------------------------------------------------------------------------------------+
-    |                                    64-bit-wide row                                      |
-    +-----------------------------------------------------------------------------------------+
-
-    +------------------------------------------------------------+--------+---------+---------+ <- header
-    |                                       block_size           | unused |prv alloc|  alloc  |
-    |                                  (6 LSB's implicitly 0)    |  (0)   |  (0/1)  |   (1)   |
-    |                                        (1 row)             | 4 bits |  1 bit  |  1 bit  |
-    +------------------------------------------------------------+--------+---------+---------+ <- (aligned)
-    |                                                                                         |
-    |                                   Payload and Padding                                   |
-    |                                        (N rows)                                         |
-    |                                                                                         |
-    |                                                                                         |
-    +-----------------------------------------------------------------------------------------+
-
-    NOTE: For an allocated block, there is no footer (it is used for payload).
+- `sf_malloc`
+- `sf_realloc`
+- `sf_free`
 
 
 ## Format of a free memory block
