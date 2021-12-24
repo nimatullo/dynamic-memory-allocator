@@ -10,7 +10,6 @@ Dynamic memory allocator using segregated lists and coalescing.
 
 ## `sf_free`
 
---
 ## Format of an allocated memory block 
     +-----------------------------------------------------------------------------------------+
     |                                    64-bit-wide row                                      |
@@ -30,7 +29,7 @@ Dynamic memory allocator using segregated lists and coalescing.
 
     NOTE: For an allocated block, there is no footer (it is used for payload).
 
---
+
 ## Format of a free memory block
     +------------------------------------------------------------+--------+---------+---------+ <- header
     |                                       block_size           | unused |prv alloc|  alloc  |
